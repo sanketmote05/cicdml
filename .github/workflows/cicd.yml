@@ -17,7 +17,7 @@ jobs:
       - name: Get Project ID
         env:
           API_KEY: ${{ secrets.CML_API_KEY }}
-          CDSW_DOMAIN: "https://ml-effe57a2-3a3.sanket-5.kfjr-x0dh.cloudera.site"
+          CDSW_DOMAIN: "https://ml-3f3203c0-d9e.sanket-5.kfjr-x0dh.cloudera.site"
           PROJ_NAME: "cicdml"
         run: |
           PROJECT_ID=$(curl -X GET "$CDSW_DOMAIN/api/v2/projects?search_filter=%7B%22name%22%3A%22$PROJ_NAME%22%7D" -H "accept: application/json" -H "Authorization: Bearer $API_KEY" | jq -r ".projects|.[0]|.id")
